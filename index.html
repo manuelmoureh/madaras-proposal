@@ -471,8 +471,14 @@ svg { display: block; max-width: 100%; }
 .mini h3{margin-top:.5rem;font-size:1.05rem;line-height:1.2;}
 .mini p{margin-top:.4rem;font-size:.85rem;line-height:1.5;color:var(--muted-light);}
 .light .mini p, .warm .mini p{color:var(--muted);}
-.costgrid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.8rem;align-items:stretch;}
-.costgrid .bigprice{font-size:clamp(1.3rem,2.3vw,2rem);}
+.costgrid{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:stretch;}
+.ledger{display:flex;flex-direction:column;}
+.ledger .r{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0;border-bottom:1px solid var(--hairline);}
+.ledger .r:last-child{border-bottom:0;}
+.ledger .k{font-weight:700;font-size:.92rem;}
+.ledger .s{display:block;font-size:.76rem;color:var(--muted);font-weight:500;margin-top:.15rem;line-height:1.4;}
+.ledger .v{font-weight:900;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:1.05rem;text-align:right;}
+.ledger .v small{display:block;font-size:.72rem;font-weight:700;color:var(--muted);}
 .plus{align-self:center;font-weight:900;font-size:2rem;color:var(--purple-light);line-height:1;}
 .lanes{display:grid;grid-template-columns:repeat(4,1fr) 1.7fr;gap:.5rem;align-items:stretch;}
 .lanes .mo{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;}
@@ -639,7 +645,7 @@ svg { display: block; max-width: 100%; }
   <!-- SLIDE 4: TWO SEPARATE COSTS -->
   <section class="slide dark">
     <div class="inner">
-      <div class="eyebrow reveal d1"><span class="dot"></span> Costs — Two Companies, Three Payments</div>
+      <div class="eyebrow reveal d1"><span class="dot"></span> Ads Costs — Two Separate Payments</div>
       <h2 class="title reveal d2" style="margin-top: .6rem; max-width: 26ch;">
         What We Charge Is Separate From What Meta Charges.
       </h2>
@@ -649,25 +655,16 @@ svg { display: block; max-width: 100%; }
 
       <div class="costgrid reveal d4" style="margin-top: 1.6rem;">
         <div class="card" style="border-color: rgba(160,4,223,.5);">
-          <span class="badge purple">1 · Trance AI · one-off</span>
-          <div class="bigprice" style="margin-top: 1rem;">KES 15,000<small>setup fee · first month only</small></div>
-          <div class="divider"></div>
-          <p class="note" style="margin-top:0;">Covers getting started: linking your pages and ad account, setting up tracking, and designing the first ads. <b>Charged once. Never repeated.</b></p>
-        </div>
-
-        <div class="plus">+</div>
-
-        <div class="card" style="border-color: rgba(160,4,223,.5);">
-          <span class="badge purple">2 · Trance AI · monthly</span>
+          <span class="badge purple">1 · Paid to Trance AI</span>
           <div class="bigprice" style="margin-top: 1rem;">KES 20,000<small>per month · management and optimisation</small></div>
           <div class="divider"></div>
-          <p class="note" style="margin-top:0;">Covers the ongoing work: running the ads, watching them every day, improving them week by week, and your weekly report.</p>
+          <p class="note" style="margin-top:0;">Covers the work: setting up the ads, running them, watching them every day, improving them week by week, and your weekly report.</p>
         </div>
 
         <div class="plus">+</div>
 
         <div class="card" style="border-color: rgba(245,158,11,.5);">
-          <span class="badge gold">3 · Meta · monthly</span>
+          <span class="badge gold">2 · Paid to Meta</span>
           <div class="bigprice" style="margin-top: 1rem;">KES 20,000–30,000<small>per month · recommended ad budget</small></div>
           <div class="divider"></div>
           <p class="note" style="margin-top:0;">Pays for the ads to be shown to parents. <b>You set the amount.</b> It goes straight to Meta from Madaras's ad account, never through us.</p>
@@ -675,8 +672,8 @@ svg { display: block; max-width: 100%; }
       </div>
 
       <div class="card reveal d5" style="margin-top: 1.2rem;">
-        <p style="font-size:.95rem; color:var(--muted-light); line-height:1.55;"><b style="color:var(--text);">You choose how long.</b> We recommend 4 months, October to January, for the 2027 intake. Running for fewer or more months is your decision. The two monthly payments follow the length you choose. The setup fee stays the same, whatever length you pick.</p>
-        <p style="font-size:.95rem; color:var(--muted-light); line-height:1.55; margin-top:.6rem;"><b style="color:var(--text);">After enrolment,</b> a lighter ad budget of about KES 10,000 per month keeps the school's pages active. It is also paid to Meta, and is explained on the next slide.</p>
+        <p style="font-size:.95rem; color:var(--muted-light); line-height:1.55;"><b style="color:var(--text);">You choose how long.</b> We recommend 4 months, October to January, for the 2027 intake. Running for fewer or more months is your decision. Both payments are per month, so they follow the length you choose.</p>
+        <p style="font-size:.95rem; color:var(--muted-light); line-height:1.55; margin-top:.6rem;"><b style="color:var(--text);">After enrolment,</b> the social media plan begins, with its own costs on the next slide, including a lighter ad budget of about KES 10,000 per month, also paid to Meta.</p>
       </div>
     </div>
 
@@ -707,11 +704,12 @@ svg { display: block; max-width: 100%; }
 
         <div class="card reveal d4" style="border-color: var(--purple);">
           <span class="badge gold">Investment</span>
-          <div class="bigprice" style="margin-top: 1rem;">KES 25,000<small>per month · retainer, paid to Trance AI</small></div>
-          <div class="divider"></div>
-          <p class="note" style="margin-top:0;"><b style="color:var(--ink-text);">Starts after enrolment ends.</b> It never runs at the same time as the ads fee.</p>
-          <div class="divider" style="margin: .8rem 0;"></div>
-          <div class="bigprice" style="font-size: clamp(1.15rem,2vw,1.55rem);">+ About KES 10,000<small>per month · light ad budget, paid to Meta. You set the amount.</small></div>
+          <p class="note" style="margin-top:.7rem;"><b style="color:var(--ink-text);">Starts after enrolment ends</b>, never overlapping the ads fee.</p>
+          <div class="ledger" style="margin-top:.4rem;">
+            <div class="r"><div class="k">One-off setup fee<span class="s">Paid to Trance AI. Charged once, to set up the AI automation systems.</span></div><div class="v">KES 15,000</div></div>
+            <div class="r"><div class="k">Monthly retainer<span class="s">Paid to Trance AI. Management and optimisation.</span></div><div class="v">KES 25,000<small>per month</small></div></div>
+            <div class="r"><div class="k">Light ad budget<span class="s">Paid to Meta. You set the amount.</span></div><div class="v">About KES 10,000<small>per month</small></div></div>
+          </div>
         </div>
       </div>
 
@@ -720,7 +718,7 @@ svg { display: block; max-width: 100%; }
         <div class="lanes">
           <div class="mo">Oct</div><div class="mo">Nov</div><div class="mo">Dec</div><div class="mo">Jan</div><div class="mo">After enrolment</div>
           <div class="bar ads">Service 1 · Ads<small>Recommended 4 months · KES 20,000 / month</small></div>
-          <div class="bar auto">Service 2 · Social media<small>KES 25,000 / month, plus about KES 10,000 ad budget to Meta</small></div>
+          <div class="bar auto">Service 2 · Social media<small>KES 15,000 setup (once), then KES 25,000 / month</small></div>
         </div>
       </div>
     </div>
@@ -799,12 +797,12 @@ svg { display: block; max-width: 100%; }
         <div class="card mini reveal d5">
           <span class="badge purple">Step 3</span>
           <h3>Launch</h3>
-          <p>We set up and launch the ads in October, then send your first weekly report. The one-off KES 15,000 setup fee is charged this month only.</p>
+          <p>We set up and launch the ads in October, then send your first weekly report.</p>
         </div>
         <div class="card mini reveal d6" style="border-color: var(--purple);">
           <span class="badge gold">Step 4</span>
           <h3>Keep going</h3>
-          <p>After enrolment ends, the social media plan begins at KES 25,000 per month, with about KES 10,000 a month of light ads paid to Meta.</p>
+          <p>After enrolment ends, the social media plan begins: a one-off KES 15,000 setup fee, then KES 25,000 per month, plus about KES 10,000 a month of light ads paid to Meta.</p>
         </div>
       </div>
 
